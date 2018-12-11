@@ -5,6 +5,8 @@ class PlayerSubmissionForm extends Component {
 
   constructor(props) {
     super(props);
+
+    
   }
 
   render() {
