@@ -54,7 +54,14 @@ class PlayerSubmissionForm extends Component {
 
     return this.props.fields.map( (field, i) => {
       if (field.key) {
-        return <input key={i + 1} placeholder={field.placeholder} value={this.state[field.key]} type="text" className="PlayerSubmissionForm__input--invalid" />;
+        return <input key={i + 1}
+                      placeholder={field.placeholder}
+                      value={this.state[field.key]}
+                      type="text"
+                      name={field.key}
+                      className={this.state[field.key] === "" ? "PlayerSubmissionForm__input--invalid" : "PlayerSubmissionForm__input"}
+                      onChange={this.onFieldChangeHandler}
+                />;
       } else {
         return field;
       }
