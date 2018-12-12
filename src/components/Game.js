@@ -54,11 +54,11 @@ class Game extends Component {
           { exampleFormat }
         </p>
 
-        {this.state.lastLine !== "" && <RecentSubmission lastLine={this.state.lastLine} />}
+        {(!this.state.isSubmitted && this.state.lastLine !== "") && <RecentSubmission lastLine={this.state.lastLine} />}
 
-        <PlayerSubmissionForm fields={ FIELDS } player={this.state.player} sendSubmissionCallback={this.submitLine} />
+        {!this.state.isSubmitted && <PlayerSubmissionForm fields={ FIELDS } player={this.state.player} sendSubmissionCallback={this.submitLine} />}
 
-        <FinalPoem poemLines={this.state.submissions} isSubmittedCallback={this.state.isSubmitted} onPoemSubmitCallback={this.submitPoem}/>
+        <FinalPoem poemLines={this.state.submissions} isSubmitted={this.state.isSubmitted} onPoemSubmitCallback={this.submitPoem}/>
 
       </div>
     );

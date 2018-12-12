@@ -12,10 +12,10 @@ const FinalPoem = (props) => {
       </section>}
 
       <div className="FinalPoem__reveal-btn-container">
-        <input type="button"
+        {!props.isSubmitted && <input type="button"
               value="We are finished: Reveal the Poem"
               className="FinalPoem__reveal-btn"
-              onClick={props.onPoemSubmitCallback}/>
+              onClick={props.onPoemSubmitCallback}/>}
       </div>
     </div>
   );
