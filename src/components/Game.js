@@ -54,7 +54,7 @@ class Game extends Component {
           { exampleFormat }
         </p>
 
-        <RecentSubmission lastLine={this.state.lastLine} />
+        {this.state.lastLine !== "" && <RecentSubmission lastLine={this.state.lastLine} />}
 
         <PlayerSubmissionForm fields={ FIELDS } player={this.state.player} sendSubmissionCallback={this.submitLine} />
 
