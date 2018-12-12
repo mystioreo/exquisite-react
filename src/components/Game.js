@@ -50,11 +50,11 @@ class Game extends Component {
           { exampleFormat }
         </p>
 
-        <RecentSubmission lastLine={this.state.lastLine} isSubmitted={this.state.isSubmitted}/>
+        <RecentSubmission lastLine={this.state.lastLine} />
 
-        <PlayerSubmissionForm fields={ FIELDS } player={this.state.player} sendSubmissionCallback={this.submitLine} isSubmitted={this.state.isSubmitted}/>
+        <PlayerSubmissionForm fields={ FIELDS } player={this.state.player} sendSubmissionCallback={this.submitLine} />
 
-        <FinalPoem poemLines={this.state.submissions} isSubmitted={this.state.isSubmitted}/>
+        <FinalPoem poemLines={this.state.submissions} />
 
       </div>
     );

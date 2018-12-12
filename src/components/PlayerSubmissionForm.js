@@ -97,7 +97,6 @@ class PlayerSubmissionForm extends Component {
 PlayerSubmissionForm.propTypes = {
   fields: PropTypes.array.isRequired,
   player: PropTypes.number.isRequired,
-  isSubmitted: PropTypes.bool.isRequired,
   sendSubmissionCallback: PropTypes.func.isRequired,
 };
 
