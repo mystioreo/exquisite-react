@@ -1,5 +1,6 @@
 import React from 'react';
 import './FinalPoem.css';
+import PropTypes from 'prop-types';
 
 const FinalPoem = (props) => {
 
@@ -7,14 +8,22 @@ const FinalPoem = (props) => {
     <div className="FinalPoem">
       <section className="FinalPoem__poem">
         <h3>Final Poem</h3>
-
+        <p>{props.poemLines}</p>
       </section>
 
       <div className="FinalPoem__reveal-btn-container">
-        <input type="button" value="We are finished: Reveal the Poem" className="FinalPoem__reveal-btn" />
+        <input type="button"
+              value="We are finished: Reveal the Poem"
+              className="FinalPoem__reveal-btn"
+              onClick={props.onPoemSubmitCallback}/>
       </div>
     </div>
   );
 }
 
+FinalPoem.propTypes = {
+  onPoemSubmitCallback: PropTypes.func.isRequired,
+  isSubmitted: PropTypes.bool.isRequired,
+  poemLines: PropTypes.array.isRequired,
+}
 export default FinalPoem;
